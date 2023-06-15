@@ -1,0 +1,93 @@
+{{> avatar_navbar}}
+<br>
+{{>tabs1}}
+{{> messages}}
+
+<div class="container w-75 p-3">
+    
+    <div class="alert alert-success alert-inactive" role="alert" id = "applied-success">Success!!</div>
+    <div class="alert alert-warning alert-inactive" role="alert" id = "applied-fail">Warning!!</div>
+
+    <div class="row">
+        <div class="col-md-6 col-12">
+            {{#tl job}}
+                <div class="card mb-4" style="width: 100%" onclick = "cardClick({{json id}})" id = {{id}}>
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{company}}</h6>
+                        <h6 class="card-subtitle mb-4 text-muted">{{location}}</h6>
+                        <div class="card-text">
+                            <span class="tag">100$</span>&nbsp;
+                            <span class="tag">Part-Time</span>
+                        </div>
+                    </div>
+                </div>
+            {{/tl}}
+        </div>
+        {{#if job}}
+            <div class="col-md-6 col-12">
+                <div class="card" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title" id = "job-title"></h5>
+                        <h6 class="card-subtitle mb-2 text-muted" id = "job-company"></h6>
+                        <h6 class="card-subtitle mb-4 text-muted" id = "job-location"></h6>
+                        <button class="btn btn-primary" onclick="applyJob()">Apply</button>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <h2 style="text-align: center;">No Jobs to Apply !!</h2>
+        {{/if}}
+    </div>
+</div>
+
+<script>
+    let globalId;
+    let env = 'prod_uri';
+
+    function cardClick(id) {
+
+            globalId = id;        
+
+            fetch(`${localStorage.getItem(`${env}`)}/employee/applied_jobs/${id}`, {
+                method : 'POST'
+            })
+            .then(res => res.json())
+            .then(data =>  {
+                let result = data.result;
+                const title = document.getElementById("job-title");
+                const company = document.getElementById("job-company");
+                const location = document.getElementById("job-location");
+
+                title.innerHTML = result.title;
+                company.innerHTML = result.company_name;
+                location.innerHTML = result.location;
+            })
+    }
+
+    function applyJob() {
+
+            fetch(`${localStorage.getItem(`${env}`)}/employee/set_job/${globalId}`, {
+                method : 'POST'
+            })
+            .then(res => res.json())
+            .then(json => {
+                    let key = Object.keys(json)[0];
+
+                    let appliedSuccess = document.getElementById('applied-success');
+                    let appliedFail = document.getElementById('applied-fail');
+
+                    if(key === 'success_msg'){
+                        appliedSuccess.classList.remove('alert-inactive');
+                        appliedSuccess.classList.add('alert-active');
+                        appliedFail.classList.add('alert-inactive');
+                    }
+                    else {
+                        appliedFail.classList.remove('alert-inactive');
+                        appliedFail.classList.add('alert-active');
+                        appliedSuccess.classList.add('alert-inactive')
+                    }
+            })
+            
+    }
+</script>

@@ -1,0 +1,189 @@
+.root-login {
+  background-image: url("/images/login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  opacity: 0.6;
+}
+
+.root-input {
+  width: 450px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.inputs-login {
+  position: absolute;
+  top: 20px;
+  left: 450px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #563d7c !important;
+  padding: 10px 40px;
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.nav-link {
+  color: white;
+}
+
+#navbarNav {
+  margin-left: 40px;
+}
+
+.nav-link {
+  margin-right: 12px;
+}
+
+.banner {
+  padding: 300px 0px;
+  background-image: url(../images/assets/images/slider-image-1-1920x600.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1.4;
+}
+
+.about-banner {
+  padding: 200px 0px;
+  background-image: url(../images/assets/images/slider-image-2-1920x600.jpg);
+  height: 200px;
+}
+
+.about-container {
+  padding: 0 80px;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+}
+
+.banner-text h4 {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+}
+
+.banner-text h2 {
+  font-size: 70px;
+  color: white;
+}
+
+.featureJobs {
+  border-bottom: 1px solid rgb(205, 205, 205);
+  margin: 40px 0;
+  padding-bottom: 8px;
+}
+
+.featureJobs span {
+  font-size: 30px;
+}
+
+.happy-client {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.happy-client span {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(100, 98, 98);
+  margin-top: 10px;
+}
+
+.happy-client em {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.about-content {
+  line-height: 1.5em;
+  color: gray;
+}
+
+.contact-container {
+  width : 500px;
+  background-color: #F1F1F1;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.avatar {
+  margin-left: 600px;
+  background-color: grey;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  padding: 8px;
+  padding-left: 18px;
+}
+
+.avatar span {
+  font-size: 20px;
+  font-weight: 600;
+  color : white
+}
+
+.avatar a {
+  margin-left: 20px;
+  color: white;
+}
+
+#tabs {
+  display: flex;
+  justify-content: center;
+}
+
+#tabs span {
+  font-size: 25px;
+  padding: 20px;
+  font-weight: 600;
+}
+
+#tabs a {
+  color: black;
+}
+
+#tabs span:hover {
+    cursor: pointer;
+}
+
+.post_tab_active,.view_tab_active,.tab_detail,.tab_view_apply_jobs,.tab_applied_jobs{
+  padding-bottom: 8px;
+  border-bottom: 3px solid blue;
+}
+
+
+.tag {
+  background-color: rgb(237, 234, 234);
+  padding : 2px 10px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.alert-active {
+    display: block;
+}
+
+.alert-inactive {
+    display: none;
+}

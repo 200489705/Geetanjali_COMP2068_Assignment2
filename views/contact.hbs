@@ -1,0 +1,29 @@
+{{> navbar}}
+<br>
+<div class="container contact-container">
+  <h3>Contacts</h3>
+  <form action="/contact" method="POST">
+    <div class="form-group mb-4">
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Email Address"
+      />
+    </div>
+    <div class="form-group mb-4">
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        name="phone"
+        placeholder="Phone Number"
+      />
+    </div>
+    <div class="form-group mb-4">
+         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary">Submit</button>
+  </form>
+</div>
